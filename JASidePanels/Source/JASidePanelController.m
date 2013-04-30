@@ -262,6 +262,8 @@ static char ja_kvoContext;
 			}
         }
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"JASidePanelWillShowPanel" object:[NSNumber numberWithInt:state]];
 }
 
 #pragma mark - Style
