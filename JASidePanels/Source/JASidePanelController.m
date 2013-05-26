@@ -139,6 +139,7 @@ static char ja_kvoContext;
     self.bouncePercentage = 0.075f;
     self.panningLimitedToTopViewController = YES;
     self.recognizesPanGesture = YES;
+    self.recognizesTapGesture = YES;
     self.allowLeftOverpan = YES;
     self.allowRightOverpan = YES;
     self.bounceOnSidePanelOpen = YES;
@@ -577,6 +578,8 @@ static char ja_kvoContext;
 }
 
 - (void)_centerPanelTapped:(__unused UIGestureRecognizer *)gesture {
+    if(!self.recognizesTapGesture)
+        return;
     [self _showCenterPanel:YES bounce:NO];
 }
 
